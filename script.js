@@ -4,7 +4,7 @@ const count = document.getElementById("count");
 const total = document.getElementById("total");
 const movieSelect = document.getElementById("movie");
 
-const ticketPrice = +movieSelect.value;
+let ticketPrice = +movieSelect.value;
 
 console.log(typeof ticketPrice);
 
@@ -13,6 +13,14 @@ function updatedSelectedCount() {
   const selectedSeats = document.querySelectorAll(".row .seat.selected");
   const selectedSeatsCount = selectedSeats.length;
 
+  // copy selected seats into arr
+  //map through array
+  //return a new array of indexes
+
+  const seatsIndex = [...selectedSeats].map(function(seat) {
+      return [...].indexOf(seat)
+  })
+  
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
 }
